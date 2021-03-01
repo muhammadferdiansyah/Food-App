@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19D00B4E25EC9F2D006152B7 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D00B4D25EC9F2D006152B7 /* Menu.swift */; };
+		19D00B5125ECA2B4006152B7 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D00B5025ECA2B4006152B7 /* Home.swift */; };
 		19F9AF0625EC93FC0007F205 /* Food_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F9AF0525EC93FC0007F205 /* Food_AppApp.swift */; };
 		19F9AF0825EC93FC0007F205 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F9AF0725EC93FC0007F205 /* ContentView.swift */; };
 		19F9AF0A25EC93FE0007F205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F9AF0925EC93FE0007F205 /* Assets.xcassets */; };
 		19F9AF0D25EC93FE0007F205 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F9AF0C25EC93FE0007F205 /* Preview Assets.xcassets */; };
+		19F9AF1925EC95CC0007F205 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F9AF1825EC95CC0007F205 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19D00B4D25EC9F2D006152B7 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		19D00B5025ECA2B4006152B7 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		19F9AF0225EC93FC0007F205 /* Food App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F9AF0525EC93FC0007F205 /* Food_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_AppApp.swift; sourceTree = "<group>"; };
 		19F9AF0725EC93FC0007F205 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		19F9AF0925EC93FE0007F205 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19F9AF0C25EC93FE0007F205 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		19F9AF0E25EC93FE0007F205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19F9AF1825EC95CC0007F205 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,9 @@
 		19F9AF0425EC93FC0007F205 /* Food App */ = {
 			isa = PBXGroup;
 			children = (
+				19F9AF1725EC94A10007F205 /* ViewModel */,
+				19F9AF1625EC948C0007F205 /* View */,
+				19F9AF1525EC947E0007F205 /* Model */,
 				19F9AF0525EC93FC0007F205 /* Food_AppApp.swift */,
 				19F9AF0725EC93FC0007F205 /* ContentView.swift */,
 				19F9AF0925EC93FE0007F205 /* Assets.xcassets */,
@@ -67,6 +76,30 @@
 				19F9AF0C25EC93FE0007F205 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		19F9AF1525EC947E0007F205 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		19F9AF1625EC948C0007F205 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				19D00B4D25EC9F2D006152B7 /* Menu.swift */,
+				19D00B5025ECA2B4006152B7 /* Home.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		19F9AF1725EC94A10007F205 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				19F9AF1825EC95CC0007F205 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +172,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				19F9AF0825EC93FC0007F205 /* ContentView.swift in Sources */,
+				19F9AF1925EC95CC0007F205 /* HomeViewModel.swift in Sources */,
+				19D00B5125ECA2B4006152B7 /* Home.swift in Sources */,
+				19D00B4E25EC9F2D006152B7 /* Menu.swift in Sources */,
 				19F9AF0625EC93FC0007F205 /* Food_AppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
