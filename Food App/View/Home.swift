@@ -27,7 +27,7 @@ struct Home: View {
           Text(HomeModel.userLocation == nil ? "Locating..." : "Deliver to")
             .foregroundColor(.black)
           
-            Text(HomeModel.userAdress)
+          Text(HomeModel.userAddress)
             .font(.caption)
             .fontWeight(.heavy)
             .foregroundColor(.pink)
@@ -53,38 +53,46 @@ struct Home: View {
         Divider()
         
         //Spacer() diganti sama scrollview
-        ScrollView(.vertical, showsIndicators: false, content: {
-          VStack(spacing: 25){
-            ForEach(HomeModel.filtered){ item in
-              
-              ZStack(alignment: Alignment(horizontal: .center, vertical: .top), content: {
-                ItemView(item: item)
+        if HomeModel.items.isEmpty{
+          Spacer()
+          ProgressView() //loading
+          Spacer()
+        } else {
+          ScrollView(.vertical, showsIndicators: false, content: {
+            VStack(spacing: 25){
+              ForEach(HomeModel.filtered){ item in
                 
-                HStack{
-                  Text("Free Delivery")
-                    .foregroundColor(.white)
-                    .padding(.vertical, 10)
-                    .padding(.horizontal)
-                    .background(Color.pink)
-      
-                  Spacer(minLength: 0)
+                ZStack(alignment: Alignment(horizontal: .center, vertical: .top), content: {
+                  ItemView(item: item)
                   
-                  Button(action: {}, label: {
-                    Image(systemName: "plus")
+                  HStack{
+                    Text("Free Delivery")
                       .foregroundColor(.white)
-                      .padding(10)
+                      .padding(.vertical, 10)
+                      .padding(.horizontal)
                       .background(Color.pink)
-                      .clipShape(Circle())
-                  })
-                }
-                .padding(.trailing, 10)
-                .padding(.top, 10)
-              })
-              .frame(width: UIScreen.main.bounds.width - 30)
+        
+                    Spacer(minLength: 0)
+                    
+                    Button(action: {
+                      HomeModel.addToCart(item: item)
+                    }, label: {
+                      Image(systemName: item.isAdded ? "checkmark" : "plus")
+                        .foregroundColor(.white)
+                        .padding(10)
+                        .background(item.isAdded ? Color.green : Color.pink)
+                        .clipShape(Circle())
+                    })
+                  }
+                  .padding(.trailing, 10)
+                  .padding(.top, 10)
+                })
+                .frame(width: UIScreen.main.bounds.width - 30)
+              }
             }
-          }
-          .padding(.top, 10)
-        })
+            .padding(.top, 10)
+          })
+        }
       }
       
       HStack{
